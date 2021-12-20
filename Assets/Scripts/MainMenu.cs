@@ -22,5 +22,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Settings");
     }
+    public void hardmode()
+    {
+        SceneManager.LoadScene(3);
+    }
 
 }
