@@ -8,7 +8,7 @@ public class ScoreKeep : MonoBehaviour
   
     void OnGUI()
     {
-        GUI.Box(new Rect(100, 100, 100, 100), Score.ToString());
+        GUI.Box(new Rect(300, 100, 100, 100), Score.ToString());
     }
 }
 

@@ -7,10 +7,14 @@ public class Ball_Spawner : MonoBehaviour
     public GameObject Pinball;
     public float timeToSpawn;
     private float currentTimeToSpawn;
+    public float speed = 2.5f;
+    float startX;
+    public float distance = 5;
+    float addX;
 
     private void Start()
     {
-    
+        startX = transform.position.x; // getting spawner star postion for pingpong function 
     }
     private void Update()
     {
@@ -23,11 +27,16 @@ public class Ball_Spawner : MonoBehaviour
             SpawnObject();
             currentTimeToSpawn = timeToSpawn;
         }
+
+        addX = Mathf.PingPong(Time.time * speed, distance);
+        transform.position = new Vector3(startX + addX, transform.position.y, transform.position.z);
     }
     public void SpawnObject()
     {
         Instantiate(Pinball, transform.position, transform.rotation);
     }
+ 
+
 
 }
 
